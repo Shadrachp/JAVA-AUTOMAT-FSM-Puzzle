@@ -1,5 +1,5 @@
-import model.Nodez;
-import model.State;
+import Model.Nodez;
+import Model.State;
 
 import java.util.ArrayList;
 import java.util.Iterator;
