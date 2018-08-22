@@ -77,16 +77,17 @@ public class Controller {
         }
         return true;
     }
+
     public void flyToEarth() {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if(spaceship.getX()==0 && spaceship.getY()==0) {
+                if(spaceship.getX() == 0 && spaceship.getY() == 0) {
                     this.stop();
                 }
                 else {
-                    spaceship.setX(spaceship.getX()-3);
-                    spaceship.setY(spaceship.getY()-3);
+                    spaceship.setX(spaceship.getX() - 3);
+                    spaceship.setY(spaceship.getY() - 3);
                 }
             }
         };
@@ -112,9 +113,7 @@ public class Controller {
     }
 
 
-
     public void displayObjects() {
-
         if(isOnMars) {
             for(int i=0; i<spaceshipObjs.length; i++) {
                 if(spaceshipObjs[i] != null) {
@@ -194,6 +193,8 @@ public class Controller {
 
     public void setNumMoveLabel(int numMoves) {
         numMoveLabel.setText("Number of moves: " + numMoves);
+        if(numMoves == 0)
+            numMoveLabel.setText("Number of moves: ");
     }
 
     public void checkWin() {
@@ -255,7 +256,6 @@ public class Controller {
 
             spaceshipObjs[0] = null;
             spaceshipObjs[1] = null;
-
         }
         else {
             isOnMars = true;
@@ -302,10 +302,9 @@ public class Controller {
         spaceshipObjs[1] = null;
 
         for(int i = 0; i < images.length; i++) {
-            images[i].setX(0);
-            images[i].setY(0);
-            images[i].setVisible(true);
+            setImage(images[i], 0,0,true);
         }
+
         gameLabel.setVisible(false);
         isOnMars = false;
         numMoves = 0;
@@ -318,15 +317,16 @@ public class Controller {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Instructions");
         alert.setHeaderText("How to Play the Game");
-        alert.setContentText("The Earth is slowly dying and a scientist wants to help build a new life on Mars. \n" +
-                            "However, he only has a spaceship that was so tiny it could only carry him and two other items. \n\n" +
-                            "He wants to transport 5 things that he thought were essential to start a new life on Mars: \n" +
-                            "(2) humans, (1) lion, (1) cow and (1) bag of grain. \nWhenever the scientist is not around, \n" +
-                            "either human would kill the lion out of fear \nor eat the cow out of hunger, \n the lion will eat the cow, \n" +
-                            "and the cow will eat the grain. \n\n" +
-                            "Only the scientist knows how to fly the spaceship. \n" +
-                            "How will the scientist transport all the five items to Mars?!");
-
+        alert.setContentText("You, the scientist, want to transport 5 things to start a new life on Mars: \n" +
+                            "2 humans, 1 lion, 1 cow and 1 bag of grain\n\n" +
+                            "The spaceship was so tiny it could only carry yourself and 2 other items.. \n\n" +
+                            "Whenever the scientist is not around:\n\n" +
+                            "human would kill the lion\n" +
+                            "human would eat the cow\n" +
+                            "lion will eat the cow\n" +
+                            "cow will eat the grain\n\n" +
+                            "Only you know how to fly the spaceship.\n" +
+                            "How will you transport all the five items to Mars?!");
         alert.showAndWait();
     }
 
@@ -335,6 +335,4 @@ public class Controller {
     @FXML void carryLion(MouseEvent event) { checkMove(l, lion); }
     @FXML void carryMan(MouseEvent event) { checkMove(m, man); }
     @FXML void carryWoman(MouseEvent event) { checkMove(w, woman); }
-
-
 }
