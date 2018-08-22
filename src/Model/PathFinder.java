@@ -15,7 +15,7 @@ public class PathFinder {
         BFS();
     }
 
-    //Panghanap ng unang tinapay
+    //Panghanap ng pandesal
     private void BFS(){
         ArrayList<Node> list = new ArrayList<>();
         ArrayList<Node> visited = new ArrayList<>();
@@ -44,12 +44,12 @@ public class PathFinder {
             }
         }
         displayShortestPaths();
-        System.out.println("List of all solution for the given fsm: ");
+        System.out.println("List of all possible solutions for the given fsm (NO REPETITIVE STATES): ");
         display();
     }
 
     private void displayShortestPaths(){
-        System.out.println("List of shortest path for the given fsm: ");
+        System.out.println("List of shortest paths for the given fsm: ");
         for (int i = 0; i < shortestPaths.size(); i++) {
             displayStates(i, shortestPaths.get(i));
         }
