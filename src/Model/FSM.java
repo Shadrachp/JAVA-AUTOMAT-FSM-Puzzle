@@ -151,7 +151,6 @@ public class FSM {
             if(!fsm.get(i).getsType().equals("dead"))
                 fsm.get(i).insertLink(findState("-1"));
         }
-        System.out.println("success");
     }
 
     private Node createState(String state, String sType){
