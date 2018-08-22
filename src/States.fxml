@@ -111,7 +111,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label21" alignment="CENTER" layoutX="933.0" layoutY="67.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="/MWLCG">
+      <Label fx:id="label21" alignment="CENTER" layoutX="933.0" layoutY="67.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: green; -fx-background-radius: 50%;" text="/MWLCG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
