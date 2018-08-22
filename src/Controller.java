@@ -17,12 +17,17 @@ public class Controller {
 
 
     /***************************************/
+
     private int numMoves = 0;
     private boolean isOnMars, isValid;
     private Object m, w, l, c, g;
     private Object[] spaceshipObjs = new Object[2];
     private String[] types = {"man", "woman", "lion", "cow", "grain"};
-    private StatesController sc;
+    private StatesController statesController;
+
+    public void injectController(StatesController statesController) {
+        this.statesController = statesController;
+    }
 
     public boolean isValid() {
         if(isOnMars) {
@@ -240,9 +245,11 @@ public class Controller {
 
             if(isValid()) {
                 System.out.println("valid");
+                isValid = true;
             }
             else {
                 System.out.println("invalid");
+                isValid = false;
                 gameLabel.setVisible(true);
             }
 
@@ -257,9 +264,11 @@ public class Controller {
 
             if(isValid()) {
                 System.out.println("valid");
+                isValid = true;
             }
             else {
                 System.out.println("invalid");
+                isValid = false;
                 gameLabel.setVisible(true);
             }
 
@@ -268,6 +277,7 @@ public class Controller {
 
         }
         System.out.println(moveToString());
+        statesController.updateStates(moveToString(), isValid);
     }
 
     @FXML
@@ -300,6 +310,7 @@ public class Controller {
         isOnMars = false;
         numMoves = 0;
         setNumMoveLabel(numMoves);
+        statesController.resetStates();
     }
 
     @FXML
