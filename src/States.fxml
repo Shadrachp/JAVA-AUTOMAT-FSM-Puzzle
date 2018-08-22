@@ -41,7 +41,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="label5" alignment="CENTER" layoutX="230.0" layoutY="261.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MG/WLC">
+      <Label fx:id="label5" alignment="CENTER" layoutX="226.0" layoutY="261.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MG/WLC">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -51,12 +51,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label9" alignment="CENTER" layoutX="396.0" layoutY="382.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="LG/MWC">
+      <Label fx:id="label9" alignment="CENTER" layoutX="339.0" layoutY="382.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="LG/MWC">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label10" alignment="CENTER" layoutX="396.0" layoutY="508.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="M/WLCG">
+      <Label fx:id="label10" alignment="CENTER" layoutX="339.0" layoutY="508.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="M/WLCG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -66,7 +66,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label8" alignment="CENTER" layoutX="396.0" layoutY="258.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MLCG/W">
+      <Label fx:id="label8" alignment="CENTER" layoutX="339.0" layoutY="258.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MLCG/W">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -81,12 +81,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label15" alignment="CENTER" layoutX="608.0" layoutY="507.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="WLCG/M">
+      <Label fx:id="label15" alignment="CENTER" layoutX="642.0" layoutY="507.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="WLCG/M">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label14" alignment="CENTER" layoutX="608.0" layoutY="387.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MWC/LG">
+      <Label fx:id="label14" alignment="CENTER" layoutX="642.0" layoutY="387.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="MWC/LG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -101,7 +101,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label13" alignment="CENTER" layoutX="608.0" layoutY="261.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="W/MLCG">
+      <Label fx:id="label13" alignment="CENTER" layoutX="642.0" layoutY="261.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="W/MLCG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -116,7 +116,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label17" alignment="CENTER" layoutX="751.0" layoutY="258.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="WLC/MG">
+      <Label fx:id="label17" alignment="CENTER" layoutX="750.0" layoutY="258.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="WLC/MG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

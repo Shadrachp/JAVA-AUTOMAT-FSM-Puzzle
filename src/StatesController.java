@@ -1,9 +1,5 @@
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class StatesController {
 
@@ -31,7 +27,7 @@ public class StatesController {
             case "00111": setColor(label6, isValid); break;
             case "00001": setColor(label7, isValid); break;
             case "01000": setColor(label8, isValid); break;
-            case "111010": setColor(label9, isValid); break;
+            case "11010": setColor(label9, isValid); break;
             case "01111": setColor(label10, isValid); break;
             case "11110": setColor(label11, isValid); break;
             case "11000": setColor(label12, isValid); break;
