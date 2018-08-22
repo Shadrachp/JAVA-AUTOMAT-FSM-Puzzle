@@ -2,9 +2,9 @@ package Model;
 
 public class Object {
     private String type;
-    private String location;
+    private int location;
 
-    public Object(String type, String location) {
+    public Object(String type, int location) {
         this.type = type;
         this.location = location;
     }
@@ -17,11 +17,11 @@ public class Object {
         this.type = type;
     }
 
-    public String getLocation() {
+    public int getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(int location) {
         this.location = location;
     }
 }
