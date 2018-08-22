@@ -5,14 +5,17 @@ import java.util.ArrayList;
 public class PathFinder {
     private ArrayList<Node> fsm;
     private ArrayList<Node> paths;
+    private ArrayList<Node> shortestPaths;
 
     public PathFinder(ArrayList<Node> fsm){
         this.fsm = fsm;
-        paths= new ArrayList<>();
+        paths = new ArrayList<>();
+        shortestPaths = new ArrayList<>();
 //        pathFinding(); //Incomplete Modified DFS (bobo version)
         BFS();
     }
 
+    //Panghanap ng unang tinapay
     private void BFS(){
         ArrayList<Node> list = new ArrayList<>();
         ArrayList<Node> visited = new ArrayList<>();
@@ -34,11 +37,35 @@ public class PathFinder {
                         list.add(n);
                     }
                 }
-            } else if (node.getsType().equals("final"))
+            } else if (node.getsType().equals("final")) {
                 paths.add(node);
+                if(countPath(node) <9)
+                    shortestPaths.add(node);
+            }
         }
+        displayShortestPaths();
+        System.out.println("List of all solution for the given fsm: ");
         display();
     }
+
+    private void displayShortestPaths(){
+        System.out.println("List of shortest path for the given fsm: ");
+        for (int i = 0; i < shortestPaths.size(); i++) {
+            displayStates(i, shortestPaths.get(i));
+        }
+        System.out.println();
+    }
+
+    private int countPath(Node node){
+        Node pTemp = node;
+        int i;
+        for (i = 0; pTemp != null; i++) {
+            pTemp = pTemp.getpPrev();
+        }
+        return i;
+    }
+
+
 
     //pang-isahan lang
     private boolean isVisited(ArrayList<Node> visited, Node n){
@@ -51,7 +78,6 @@ public class PathFinder {
 
     private boolean isVisited(Node n, Node node){
         Node pHead = node;
-
         while(pHead != null){
             if(pHead.getState().equals(n.getState()))
                 return true;
@@ -64,26 +90,23 @@ public class PathFinder {
     private void display(){
         for (int i = 0; i < paths.size(); i++) {
             Node pLink = paths.get(i);
-            System.out.print(i+1 +". ");
-            while(pLink != null){
-                System.out.print(pLink.getState());
-                if(pLink.getpPrev() != null)
-                    System.out.print("<-");
-                pLink = pLink.getpPrev();
-            }
-            System.out.println();
+            displayStates(i, pLink);
         }
     }
 
 
     //for debugging
-    private void display(Node node){
-        while(node.getpPrev() != null){
-            System.out.print(node.getState() + "<-");
-            node = node.getpPrev();
-        }
-        System.out.println();
+    private void displayStates(int i, Node node){
+        String str = i+1 + ". ";
+            while(node != null){
+                str += node.getState();
+                if(node.getpPrev() != null)
+                    str+="<-";
+                node = node.getpPrev();
+            }
+            System.out.println(str);
     }
+
 
     //Incomplete Modified dfs (Bobo version)
 //    private void pathFinding(){
@@ -194,7 +217,7 @@ public class PathFinder {
 //    }
 
     //insert this code in main to display all sol
-//    public static void main(String[] args) {
-//        PathFinder a = new PathFinder(new FSM().getFsm());
-//    }
+    public static void main(String[] args) {
+        PathFinder a = new PathFinder(new FSM().getFsm());
+    }
 }

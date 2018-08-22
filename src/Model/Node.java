@@ -8,7 +8,6 @@ public class Node {
     private Node pNext;
     private String state;
     private String sType;
-    private ArrayList<Node> visited;
 
     public Node(String state, String sType, Node pPrev){
         this.state = state;
@@ -16,7 +15,6 @@ public class Node {
         this.pPrev = pPrev;
         this.pNext = null;
         pLinks = new ArrayList<>();
-        visited = new ArrayList<>();
     }
 
     public Node(Node node){
@@ -27,13 +25,6 @@ public class Node {
         pLinks = (ArrayList<Node>) node.getpLinks().clone();
     }
 
-    public void setVisited(ArrayList<Node> visited) {
-        this.visited = visited;
-    }
-
-    public ArrayList<Node> getVisited() {
-        return visited;
-    }
 
     public ArrayList<Node> getpLinks() {
         return pLinks;
