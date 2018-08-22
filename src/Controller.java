@@ -234,6 +234,7 @@ public class Controller {
 
     @FXML
     void fly(MouseEvent event) {
+//        checkWin();   WHY U LATE
         gameLabel.setVisible(false);
         numMoves++;
         setNumMoveLabel(numMoves);
@@ -242,40 +243,30 @@ public class Controller {
         if(isOnMars) {
             isOnMars = false;
             flyToEarth();
-            displayObjects();
-
-            if(isValid()) {
-                System.out.println("valid");
-                isValid = true;
-            }
-            else {
-                System.out.println("invalid");
-                isValid = false;
-                gameLabel.setVisible(true);
-            }
-
-            spaceshipObjs[0] = null;
-            spaceshipObjs[1] = null;
         }
         else {
             isOnMars = true;
             flyToMars();
-            displayObjects();
+        }
 
-            if(isValid()) {
-                System.out.println("valid");
-                isValid = true;
-            }
-            else {
-                System.out.println("invalid");
-                isValid = false;
-                gameLabel.setVisible(true);
-            }
+        displayObjects();
 
+        if(isValid()) {
+            System.out.println("valid");
+            isValid = true;
             spaceshipObjs[0] = null;
             spaceshipObjs[1] = null;
-
         }
+        else {
+            System.out.println("invalid");
+            isValid = false;
+            gameLabel.setVisible(true);
+
+            //just to fill up the spaceship
+            spaceshipObjs[0] = c;
+            spaceshipObjs[1] = c;
+        }
+
         System.out.println(moveToString());
         statesController.updateStates(moveToString(), isValid);
     }
