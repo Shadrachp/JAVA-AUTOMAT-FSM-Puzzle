@@ -50,21 +50,18 @@ public class PathFinder {
 
     private void displayShortestPaths(){
         System.out.println("List of shortest paths for the given fsm: ");
-        for (int i = 0; i < shortestPaths.size(); i++) {
+        for (int i = 0; i < shortestPaths.size(); i++)
             displayStates(i, shortestPaths.get(i));
-        }
         System.out.println();
     }
 
     private int countPath(Node node){
         Node pTemp = node;
         int i;
-        for (i = 0; pTemp != null; i++) {
+        for (i = 0; pTemp != null; i++)
             pTemp = pTemp.getpPrev();
-        }
         return i;
     }
-
 
 
     //pang-isahan lang
