@@ -103,6 +103,16 @@ public class PathFinder {
             }
             System.out.println(str);
     }
+    public String displayStatez(int i, Node node){
+        String str = i+1 + ". ";
+        while(node != null){
+            str += node.getState();
+            if(node.getpPrev() != null)
+                str+="<-";
+            node = node.getpPrev();
+        }
+        return str;
+    }
 
 
     //Incomplete Modified dfs (Bobo version)
@@ -216,5 +226,9 @@ public class PathFinder {
     //insert this code in main to display all sol
     public static void main(String[] args) {
         PathFinder a = new PathFinder(new FSM().getFsm());
+    }
+
+    public ArrayList<Node> getShortestPaths() {
+        return shortestPaths;
     }
 }
