@@ -52,6 +52,7 @@ public class PathFinder {
         System.out.println("List of shortest paths for the given fsm: ");
         for (int i = 0; i < shortestPaths.size(); i++) {
             displayStates(i, shortestPaths.get(i));
+
         }
         System.out.println();
     }
@@ -105,6 +106,16 @@ public class PathFinder {
                 node = node.getpPrev();
             }
             System.out.println(str);
+    }
+    public String displayStatez(int i, Node node){
+        String str = i+1 + ". ";
+        while(node != null){
+            str += node.getState();
+            if(node.getpPrev() != null)
+                str+="<-";
+            node = node.getpPrev();
+        }
+        return str;
     }
 
 
@@ -217,7 +228,11 @@ public class PathFinder {
 //    }
 
     //insert this code in main to display all sol
-    public static void main(String[] args) {
-        PathFinder a = new PathFinder(new FSM().getFsm());
+//    public static void main(String[] args) {
+//        PathFinder a = new PathFinder(new FSM().getFsm());
+//    }
+
+    public ArrayList<Node> getShortestPaths() {
+        return shortestPaths;
     }
 }

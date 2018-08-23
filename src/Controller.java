@@ -1,11 +1,18 @@
+import Model.Node;
 import Model.Object;
+import Model.PathFinder;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class Controller {
 
@@ -24,6 +31,12 @@ public class Controller {
     private Object[] spaceshipObjs = new Object[2];
     private String[] types = {"man", "woman", "lion", "cow", "grain"};
     private StatesController statesController;
+    private PathFinder pathFinder;
+    private ArrayList<Node> shortestPaths;
+
+    public void setPathFinder(PathFinder pathFinder) {
+        this.pathFinder = pathFinder;
+    }
 
     public void injectController(StatesController statesController) {
         this.statesController = statesController;
@@ -268,7 +281,7 @@ public class Controller {
         }
 
         System.out.println(moveToString());
-        statesController.updateStates(moveToString(), isValid);
+        statesController.updateStates(moveToString(), isValid, false);
     }
 
     @FXML
@@ -278,6 +291,27 @@ public class Controller {
 
     @FXML
     void solution() {
+        shortestPaths = pathFinder.getShortestPaths();
+        List<String> solutions = new ArrayList<>();
+        String str = "";
+
+        for (int i = 0; i < shortestPaths.size(); i++) {
+            str = pathFinder.displayStatez(i, shortestPaths.get(i));
+            solutions.add(str);
+        }
+
+        ChoiceDialog<String> dialog = new ChoiceDialog<>("", solutions);
+        dialog.setTitle("Shortest path solutions");
+        dialog.setHeaderText("There are " + shortestPaths.size() + " shortest path solutions");
+        dialog.setContentText("Choose one:");
+
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            if(!result.get().isEmpty()) {
+                statesController.updateSolution(result.get().substring(3), true, true);
+            }
+        }
 
     }
 

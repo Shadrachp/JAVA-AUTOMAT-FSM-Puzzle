@@ -13,6 +13,8 @@ public class Driver extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        PathFinder a = new PathFinder(new FSM().getFsm());
+
         StatesController statesController;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("View.fxml"));
         Parent root = loader.load();
@@ -32,6 +34,7 @@ public class Driver extends Application {
 
 
         loader.<Controller>getController().injectController(statesController);
+        loader.<Controller>getController().setPathFinder(a);
     }
 
     public static void main(String[] args) {
