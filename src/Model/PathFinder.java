@@ -43,9 +43,9 @@ public class PathFinder {
                     shortestPaths.add(node);
             }
         }
-        displayShortestPaths();
-        System.out.println("List of all possible solutions for the given fsm (NO REPETITIVE STATES): ");
-        display();
+//        displayShortestPaths();
+//        System.out.println("List of all possible solutions for the given fsm (NO REPETITIVE STATES): ");
+//        display();
     }
 
     private void displayShortestPaths(){

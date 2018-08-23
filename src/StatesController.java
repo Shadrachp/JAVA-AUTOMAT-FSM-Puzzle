@@ -1,8 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-import java.lang.reflect.Array;
-
 public class StatesController {
 
     @FXML
@@ -29,7 +27,6 @@ public class StatesController {
     }
 
     public void updateStates(String string, boolean isValid, boolean isSolution) {
-        System.out.println("updatestates: "+string);
         switch(string) {
             case "00000": setColor(label0, isValid, isSolution); break;
             case "00110": setColor(label1, isValid, isSolution); break;
@@ -59,7 +56,8 @@ public class StatesController {
     }
 
     public void setColor(Label label, boolean isValid, boolean isSolution) {
-        reset();
+//        reset();
+
         if(isValid) {
             if(isSolution) {
                 label.setStyle("-fx-background-color: green; -fx-background-radius: 50%");
