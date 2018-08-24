@@ -83,7 +83,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label18" alignment="CENTER" layoutX="868.0" layoutY="135.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="LC/MWG">
+      <Label fx:id="label18" alignment="CENTER" layoutX="875.0" layoutY="131.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: skyblue; -fx-background-radius: 50%;" text="LC/MWG">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

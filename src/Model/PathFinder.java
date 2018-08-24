@@ -43,9 +43,9 @@ public class PathFinder {
                     shortestPaths.add(node);
             }
         }
-//        displayShortestPaths();
-//        System.out.println("List of all possible solutions for the given fsm (NO REPETITIVE STATES): ");
-//        display();
+        displayShortestPaths();
+        System.out.println("List of all possible solutions for the given fsm (NO REPETITIVE STATES): ");
+        display();
     }
 
     private void displayShortestPaths(){
@@ -104,7 +104,7 @@ public class PathFinder {
             System.out.println(str);
     }
     public String displayStatez(int i, Node node){
-        String str = i+1 + ". ";
+        String str = "";
         while(node != null){
             str += node.getState();
             if(node.getpPrev() != null)
@@ -224,10 +224,13 @@ public class PathFinder {
 //    }
 
     //insert this code in main to display all sol
-    public static void main(String[] args) {
-        PathFinder a = new PathFinder(new FSM().getFsm());
-    }
+//    public static void main(String[] args) {
+//        PathFinder a = new PathFinder(new FSM().getFsm());
+//    }
 
+    public ArrayList<Node> getPaths() {
+        return paths;
+    }
     public ArrayList<Node> getShortestPaths() {
         return shortestPaths;
     }

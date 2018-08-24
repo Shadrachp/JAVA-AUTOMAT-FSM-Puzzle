@@ -2,6 +2,7 @@ import Model.Node;
 import Model.Object;
 import Model.PathFinder;
 import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceDialog;
@@ -127,11 +128,11 @@ public class Controller {
 
 
     public void displayObjects() {
+
         if(isOnMars) {
             for(int i=0; i<spaceshipObjs.length; i++) {
                 if(spaceshipObjs[i] != null) {
                     spaceshipObjs[i].setLocation(1);
-
                     if(spaceshipObjs[i].getType().equals("man")) {
                         setImage(man, 450, 410, true);
                     }
@@ -158,7 +159,6 @@ public class Controller {
             for(int i=0; i<spaceshipObjs.length; i++) {
                 if(spaceshipObjs[i] != null) {
                     spaceshipObjs[i].setLocation(0);
-
                     if(spaceshipObjs[i].getType().equals("man")) {
                         setImage(man, 0, 0, true);
                     }
@@ -212,9 +212,11 @@ public class Controller {
 
     public void checkWin() {
         if(g.getLocation() == 1 && c.getLocation() == 1 && l.getLocation() == 1
-                && m.getLocation() == 1 && w.getLocation() == 1) {
+                && m.getLocation() == 1 && w.getLocation() == 1 && isOnMars) {
             gameLabel.setText("YOU WIN!!!");
             //end game
+            //just to fill up the spaceship
+
         }
     }
 
@@ -247,7 +249,8 @@ public class Controller {
 
     @FXML
     void fly(MouseEvent event) {
-//        checkWin();   WHY U LATE
+           //WHY U LATE
+        gameLabel.setText("GAME OVER");
         gameLabel.setVisible(false);
         numMoves++;
         setNumMoveLabel(numMoves);
@@ -282,10 +285,9 @@ public class Controller {
 
         System.out.println(moveToString());
         statesController.updateStates(moveToString(), isValid, false);
-    }
+        System.out.println(g.getLocation());
+        checkWin();
 
-    @FXML
-    void hint() {
 
     }
 
@@ -309,7 +311,7 @@ public class Controller {
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             if(!result.get().isEmpty()) {
-                statesController.updateSolution(result.get().substring(3), true, true);
+                statesController.updateSolution(result.get(), true, true);
             }
         }
 

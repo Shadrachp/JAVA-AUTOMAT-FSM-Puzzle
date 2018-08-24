@@ -17,6 +17,7 @@ public class StatesController {
     }
 
     public void updateSolution(String string, boolean isValid, boolean isSolution) {
+        reset();
         String[] states = string.split("<-");
         for(int i = 0; i < states.length; i++) {
             String str = states[i].substring(1);

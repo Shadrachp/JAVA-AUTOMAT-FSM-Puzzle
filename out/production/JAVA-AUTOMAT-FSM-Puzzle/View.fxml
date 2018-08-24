@@ -69,17 +69,12 @@
             <Image url="@assets/lion.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="595.0" layoutY="27.0" onAction="#hint" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: maroon;" text="HINT" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </JFXButton>
       <JFXButton layoutX="771.0" layoutY="27.0" onAction="#solution" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: maroon;" text="SOLUTION" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="419.0" layoutY="27.0" onAction="#reset" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: maroon;" text="RESET" textFill="WHITE">
+      <JFXButton layoutX="596.0" layoutY="27.0" onAction="#reset" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: maroon;" text="RESET" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -94,7 +89,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <JFXButton layoutX="349.0" layoutY="24.0" onAction="#instructions" prefHeight="57.0" prefWidth="58.0" style="-fx-background-color: green; -fx-background-radius: 50%;" text="i" textFill="WHITE">
+      <JFXButton layoutX="526.0" layoutY="24.0" onAction="#instructions" prefHeight="57.0" prefWidth="58.0" style="-fx-background-color: green; -fx-background-radius: 50%;" text="i" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
